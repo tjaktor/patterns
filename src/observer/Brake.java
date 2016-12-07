@@ -4,22 +4,24 @@ public class Brake implements Brakeable {
 	
 	private String name;
 	private ObservableBrakingUnit brakingUnit;
+	private int brakingPower;
 	
 	public Brake( String name, ObservableBrakingUnit brakingUnit )
 	{
 		this.name = name;
 		this.brakingUnit = brakingUnit;
+		this.brakingPower = 0;
 		this.brakingUnit.addBrake( this );
 	}
 	
-	public void activateBrake()
+	public void disconnectFromUnit()
 	{
-		System.out.println( this.name + " activated!");
+		this.brakingUnit.removeBrake( this );
 	}
 	
-	public void deactivateBrake()
+	public void updateBraking( int power )
 	{
-		System.out.println( this.name + " de-activated!");
+		this.brakingPower = power;
+		System.out.println( this.name + " braking at "+ this.brakingPower + "%!");
 	}
-	
 }

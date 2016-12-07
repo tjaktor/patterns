@@ -2,6 +2,9 @@ package observer;
 
 import java.util.ArrayList;
 
+/**
+ * Observer
+ */
 public class ObserverMain {
 
 	public static void main(String[] args) {
@@ -13,9 +16,8 @@ public class ObserverMain {
 		Brake brakeRR = new Brake( "RearRightBrake", unit );
 		Brake brakeRL = new Brake( "RearLeftBrake", unit );
 		
-		unit.activateBrakes();
 		
-		unit.deactivateBrakes();
+		unit.setStrenghtOfBraking(50);
 		
 	}
 
